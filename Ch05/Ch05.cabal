@@ -1,0 +1,11 @@
+name:       Ch05
+version:    0.0.1
+cabal-version: >= 1.10
+
+library
+    exposed-modules:
+        Exercises
+    hs-source-dirs:
+        .
+    build-depends: base
+    default-language: Haskell2010

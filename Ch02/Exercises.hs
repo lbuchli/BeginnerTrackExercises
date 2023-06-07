@@ -12,3 +12,6 @@ Exercise: Try expressions from the chapter or what you can come up with here.
 
 -- >>> 2 + 15
 -- 17
+
+test :: Int
+test = 3
