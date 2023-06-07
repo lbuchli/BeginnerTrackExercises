@@ -1,5 +1,5 @@
 -- Chapter 05: Recursion
-module Ch05 where
+module Exercises where
 
 {-|
 Exercise: Implement the following functions. Recursion will be neccessary in

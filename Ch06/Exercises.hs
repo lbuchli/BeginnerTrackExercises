@@ -1,5 +1,5 @@
 -- Chapter 06: Higher order functions
-module Ch06 where
+module Exercises where
 
 {-|
 Exercise: What is the type of the following expressions? Use the prompt below to

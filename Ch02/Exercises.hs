@@ -1,5 +1,5 @@
 -- Chapter 02: Starting Out
-module Ch02 where
+module Exercises where
 
 
 {-|

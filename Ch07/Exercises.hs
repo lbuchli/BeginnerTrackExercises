@@ -1,5 +1,5 @@
 -- Chapter 07: Modules
-module Ch07 where
+module Exercises where
 
 {-|
 Exercise: Using the functions you just learned about, implement a function that

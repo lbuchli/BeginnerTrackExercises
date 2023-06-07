@@ -1,5 +1,5 @@
 -- Chapter 09: Input and Output
-module Ch09 where
+module Exercises where
 
 import System.Random
 

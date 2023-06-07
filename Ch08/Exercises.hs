@@ -1,5 +1,5 @@
 -- Chapter 08: Making Our Own Types and Typeclasses
-module Ch08 where
+module Exercises where
 
 {-|
 Exercise: Peano defined natural numbers by means of 0 and successors of it.

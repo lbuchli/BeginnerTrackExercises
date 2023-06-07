@@ -1,5 +1,5 @@
 -- Chapter 03: Types and Typeclasses
-module Ch03 where
+module Exercises where
 
 {-|
 Exercise: Fill the gaps (underscores), so that the file will typecheck. Your IDE

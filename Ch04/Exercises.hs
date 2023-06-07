@@ -1,5 +1,5 @@
 -- Chapter 04: Syntax in Functions
-module Ch04 where
+module Exercises where
 
 {-|
 Exercise: Implement the following two functions using:
