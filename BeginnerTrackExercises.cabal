@@ -6,12 +6,12 @@ cabal-version: 1.12
 
 name:           BeginnerTrackExercises
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/BeginnerTrackExercises#readme>
-homepage:       https://github.com/githubuser/BeginnerTrackExercises#readme
-bug-reports:    https://github.com/githubuser/BeginnerTrackExercises/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2023 Author name here
+description:    Please see the README on GitHub at <https://github.com/lbuchli/BeginnerTrackExercises#readme>
+homepage:       https://github.com/lbuchli/BeginnerTrackExercises#readme
+bug-reports:    https://github.com/lbuchli/BeginnerTrackExercises/issues
+author:         Lukas Buchli
+maintainer:     Lukas Buchli
+copyright:      2023 Lukas Buchli
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -21,7 +21,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/BeginnerTrackExercises
+  location: https://github.com/lbuchli/BeginnerTrackExercises
 
 library
   exposed-modules:
@@ -32,6 +32,8 @@ library
       Ch06
       Ch07
       Ch08
+      Ch09
+      Ch10
       Lib
   other-modules:
       Paths_BeginnerTrackExercises
@@ -40,6 +42,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , random
   default-language: Haskell2010
 
 executable BeginnerTrackExercises-exe
@@ -52,6 +55,7 @@ executable BeginnerTrackExercises-exe
   build-depends:
       BeginnerTrackExercises
     , base >=4.7 && <5
+    , random
   default-language: Haskell2010
 
 test-suite BeginnerTrackExercises-test
@@ -65,4 +69,5 @@ test-suite BeginnerTrackExercises-test
   build-depends:
       BeginnerTrackExercises
     , base >=4.7 && <5
+    , random
   default-language: Haskell2010
