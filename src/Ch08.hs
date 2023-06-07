@@ -24,3 +24,16 @@ Exercise: Define an Eq instance for your Peano numbers.
 
 instance Eq Nat where
   _
+
+{-|
+Exercise: Define a class that allows casting to and from Int. Your functions
+should also make it possible to mark a cast as impossible (for example when
+casting a negative integer to a natural number). Make an instance for your
+natural number type.
+|-}
+
+class _ where
+  _
+
+instance _ Nat where
+  _
