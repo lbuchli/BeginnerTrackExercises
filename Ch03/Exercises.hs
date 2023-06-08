@@ -10,24 +10,24 @@ type GHC inferred for the same expression using the eval field below.
 -- >>> :t _
 
 a :: [Bool]
-a = _
+a = [True]
 
 b :: (Bool, Bool)
-b = _
+b = (True, False)
 
-c :: _
+c :: [Int]
 c = [1, 2, 3]
 
 d :: Int -> Int
-d _ = _
+d x = x
 
-e :: _
+e :: Int -> Int -> Int
 e x y = x + y
 
-f :: _
+f :: Int
 f = head [1, 2]
 
-g :: _
+g :: ([a] -> a, (b, c) -> b)
 g = (head, fst)
 
 
@@ -41,10 +41,10 @@ h :: Show a => a -> String
 h a = show a
 
 i :: Bounded a => (a, a)
-i = _
+i = (minBound, maxBound)
 
 j :: Num a => a -> a
-j _ = _
+j x = x+1
 
 k :: (Num b, Integral a) => a -> a -> b
-k _ _ = _
+k x y = fromIntegral x + fromIntegral y
