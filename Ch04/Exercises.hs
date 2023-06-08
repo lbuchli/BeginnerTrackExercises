@@ -6,8 +6,6 @@ Exercise: Implement the following two functions using:
 (1) Pattern matching
 (2) Guards
 (3) A 'case' Expression
-
-TODO check implementations
 |-}
 
 
