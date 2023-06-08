@@ -8,9 +8,9 @@ guards or case expressions.
 |-}
 
 
--- 'replicate' replicates a value n times (resulting in a list of length n).
-replicate :: Int -> a -> [a]
-replicate = _
+-- 'myReplicate' replicates a value n times (resulting in a list of length n).
+myReplicate :: Int -> a -> [a]
+myReplicate = _
 
 -- 'runningSum' adds the sum of all previous numbers in a list to the current
 -- number. For this implementation, a helper function is neccessary. The helper
