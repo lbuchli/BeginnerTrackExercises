@@ -26,8 +26,8 @@ keySet = Set.fromList . Map.keys
 
 {-|
 Exercise: Implement 'union' for lists using
-(1) Only 'delete', 'foldr' and (++)
-(2) Only 'filter', 'foldr', 'intersect' and (++)
+(1) At most 'delete', (:), and 'foldr'
+(2) At most 'filter', intersect', (++) and 'nub'
 |-}
 
 union1 :: Eq a => [a] -> [a] -> [a]
