@@ -8,34 +8,34 @@ find the type of predifined functions.
 
 -- >>> :t even
 
-a :: _
+a :: (a -> b) -> [a] -> [b]
 a = map
 
-b :: _
-b = replicate True
+-- b :: not well-typed
+---b = replicate True
 
-c :: _
+c :: Num n => n -> n
 c = (1 +)
 
-d :: _
+d :: Num tx => ty -> tx
 d = (\x -> \y -> x) 3
 
-e :: _
+e :: [a] -> [Bool]
 e = map (const False)
 
-f :: _
+f :: Integral i => [i] -> [i]
 f = filter even
 
-g :: _
+g :: Num n => n -> [n] -> n
 g = foldr (+)
 
-h :: _
+h :: Integral i => i -> Bool
 h = (even $)
 
-i :: _
+i :: Integral i => [i] -> [i]
 i = filter even . map (+1)
 
-j :: _
+j :: (a -> [b]) -> a -> [Bool]
 j = (map (const True) .)
 
 {-|
@@ -44,16 +44,16 @@ Exercise: Implement the following functions using foldr.
 
 -- 'length' returns the length of a list.
 length :: [a] -> Int
-length = _
+length = foldr (\_ sum -> sum + 1) 0
 
 -- 'myFilter' behaves like 'filter'.
 myFilter :: (a -> Bool) -> [a] -> [a]
-myFilter = _
+myFilter p = foldr (\x ys -> if p x then x : ys else ys) []
 
 -- 'mapIf' applies a function only if a condition is true.
 mapIf :: (a -> Bool) -> (a -> a) -> [a] -> [a]
-mapIf = _
+mapIf p f = foldr (\x ys -> if p x then f x : ys else x : ys) []
 
 -- 'stretch' stretches a list by repeating each element once, e.g. [1,2,3] -> [1,1,2,2,3,3]
 stretch :: [a] -> [a]
-stretch = _
+stretch = foldr (\x ys -> x : x : ys) []
