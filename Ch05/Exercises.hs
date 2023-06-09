@@ -11,7 +11,7 @@ guards or case expressions.
 -- 'replicate' replicates a value n times (resulting in a list of length n).
 myReplicate :: Int -> a -> [a]
 myReplicate 0 _ = []
-myReplicate n x = x : replicate (n-1) x
+myReplicate n x = x : myReplicate (n-1) x
 
 
 -- 'runningSum' adds the sum of all previous numbers in a list to the current
