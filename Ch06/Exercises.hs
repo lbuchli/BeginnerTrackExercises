@@ -12,7 +12,7 @@ a :: _
 a = map
 
 b :: _
-b = replicate True
+b = replicate 3
 
 c :: _
 c = (1 +)
@@ -50,7 +50,7 @@ length = _
 myFilter :: (a -> Bool) -> [a] -> [a]
 myFilter = _
 
--- 'mapIf' applies a function only if a condition is true.
+-- 'mapIf' applies a function only if a condition is true, otherwise, the value is left unchanged.
 mapIf :: (a -> Bool) -> (a -> a) -> [a] -> [a]
 mapIf = _
 
