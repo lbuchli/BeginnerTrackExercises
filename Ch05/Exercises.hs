@@ -34,9 +34,9 @@ takeEverySnd xs = xs
 -- element). You will need to define a helper function, which you can do in the
 -- 'where' clause.
 takeEvery :: Int -> [a] -> [a]
-takeEvery n xs = go 0 xs
+takeEvery n xs = go 1 xs
   where
-    go 0 (x:xs) = x : go n xs
+    go 1 (x:xs) = x : go n xs
     go m (x:xs) = go (m-1) xs
     go _ [] = []
 
@@ -44,8 +44,10 @@ takeEvery n xs = go 0 xs
 -- on how that works, feel free to ask google or me. A merging and a splitting
 -- helper function will be neccessary.
 mergeSort :: Ord a => [a] -> [a]
+mergeSort [] = []
+mergeSort [x] = [x]
 mergeSort xs = let (ys, zs) = split xs
-               in merge (mergeSort ys) (mergeSort zs)
+               in merge (mergeSort ys, mergeSort zs)
   where
     split :: [a] -> ([a], [a])
     split (y:z:xs) = let (ys, zs) = split xs
@@ -53,8 +55,8 @@ mergeSort xs = let (ys, zs) = split xs
     split [x] = ([x], [])
     split [] = ([], [])
 
-    merge :: ([a], [a]) -> [a]
-    merge (y:ys, z:zs) | y < z = y : merge ys (z:zs)
-                       | otherwise = z : merge (y:ys) zs
+    merge :: Ord a => ([a], [a]) -> [a]
+    merge (y:ys, z:zs) | y < z = y : merge (ys, z:zs)
+                       | otherwise = z : merge (y:ys, zs)
     merge ([], zs) = zs
     merge (ys, []) = ys
