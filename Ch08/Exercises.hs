@@ -7,7 +7,7 @@ Define a data type that represents this idea using a constructor for zero and
 one for the successor of a number.
 |-}
 
-data Nat = _
+data Nat = Z | S Nat
 
 {-|
 Exercise: Define 'plus', which acts recursively on two natural numbers and
@@ -15,7 +15,8 @@ returns their sum.
 |-}
 
 plus :: Nat -> Nat -> Nat
-plus = _
+plus Z m = m
+plus (S n) m = S (plus n m)
 
 
 {-|
@@ -23,7 +24,9 @@ Exercise: Define an Eq instance for your Peano numbers.
 |-}
 
 instance Eq Nat where
-  _
+  S n == S m = n == m
+  Z == Z = True
+  _ == _ = False
 
 {-|
 Exercise: Define a class that allows casting to and from Int. Your functions
@@ -32,8 +35,18 @@ casting a negative integer to a natural number). Make an instance for your
 natural number type.
 |-}
 
-class _ where
-  _
+class CastInt a where
+  toInt :: a -> Maybe Int
+  fromInt :: Int -> Maybe a
 
-instance _ Nat where
-  _
+instance CastInt Nat where
+  toInt (S n) = case toInt n of
+    Nothing -> Nothing
+    Just n' -> Just (1 + n')
+  toInt Z = Just 0
+
+  fromInt n | n > 0 = case fromInt (n-1) of
+                Nothing -> Nothing
+                Just n' -> Just (S n')
+  fromInt 0 = Just Z
+  fromInt _ = Nothing
