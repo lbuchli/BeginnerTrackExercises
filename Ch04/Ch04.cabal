@@ -12,5 +12,5 @@ library
 Test-Suite tests
     main-is: Tests.hs
     type: exitcode-stdio-1.0
-    build-depends: base, hspec, Ch04
+    build-depends: base, hspec, QuickCheck, Ch04
     default-language: Haskell2010
