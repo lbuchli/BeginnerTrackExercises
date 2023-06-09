@@ -11,8 +11,8 @@ find the type of predifined functions.
 a :: (a -> b) -> [a] -> [b]
 a = map
 
--- b :: not well-typed
----b = replicate True
+b :: a -> [a]
+b = replicate 3
 
 c :: Num n => n -> n
 c = (1 +)
@@ -50,7 +50,7 @@ length = foldr (\_ sum -> sum + 1) 0
 myFilter :: (a -> Bool) -> [a] -> [a]
 myFilter p = foldr (\x ys -> if p x then x : ys else ys) []
 
--- 'mapIf' applies a function only if a condition is true.
+-- 'mapIf' applies a function only if a condition is true, otherwise, the value is left unchanged.
 mapIf :: (a -> Bool) -> (a -> a) -> [a] -> [a]
 mapIf p f = foldr (\x ys -> if p x then f x : ys else x : ys) []
 
