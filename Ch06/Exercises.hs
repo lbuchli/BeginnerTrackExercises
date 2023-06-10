@@ -42,9 +42,9 @@ j = (map (const True) .)
 Exercise: Implement the following functions using foldr.
 |-}
 
--- 'length' returns the length of a list.
-length :: [a] -> Int
-length = _
+-- 'myLength' returns the length of a list.
+myLength :: [a] -> Int
+myLength = _
 
 -- 'myFilter' behaves like 'filter'.
 myFilter :: (a -> Bool) -> [a] -> [a]

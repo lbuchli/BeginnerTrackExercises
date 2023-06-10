@@ -15,10 +15,10 @@ import Exercises
 main :: IO ()
 main = hspec $ do
   describe "wordCount" $
-    it "behaves like 'length . words'" $ property $
+    it "behaves like reference implementation" $ property $
         \s -> wordCount s == (length . words) s
   describe "keySet" $
-    it "behaves like 'Set.fromList . Map.keys'" $ property $
+    it "behaves like reference implementation" $ property $
         \(m :: Map Int String) -> keySet m == (Set.fromList . Map.keys) m
   describe "union1" $
     it "behaves like 'union'" $ property $
