@@ -12,3 +12,30 @@ Exercise: Try expressions from the chapter or what you can come up with here.
 
 -- >>> 2 + 15
 -- 17
+
+{-|
+Exercise: Here are the definitions of this book chapter. Add a definition
+'yourDef' that uses at least one of the definitions above. Try your definition
+using the '-- >>>' comment below.
+|-}
+
+doubleMe x = x + x
+
+doubleUs x y = x*2 + y*2
+
+doubleSmallNumber x = if x > 100
+                        then x
+                        else x*2
+
+conanO'Brien = "It's a-me, Conan O'Brien!"
+
+yourDef = _
+
+-- >>> yourDef
+
+{-|
+Exercise: Create a list of all squares of even numbers from 2 to 100. Check your
+definition using 'stack test Ch02'.
+|-}
+
+evenSquares = _
