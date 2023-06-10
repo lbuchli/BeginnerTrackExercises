@@ -29,7 +29,7 @@ doubleSmallNumber x = if x > 100
 
 conanO'Brien = "It's a-me, Conan O'Brien!"
 
-yourDef = _
+yourDef = doubleUs 2 3
 
 -- >>> yourDef
 
@@ -38,4 +38,4 @@ Exercise: Create a list of all squares of even numbers from 2 to 100. Check your
 definition using 'stack test Ch02'.
 |-}
 
-evenSquares = _
+evenSquares = [x^2 | x <- [2..100], even x]
