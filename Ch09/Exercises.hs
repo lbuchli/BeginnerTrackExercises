@@ -23,7 +23,7 @@ tests hold, return True, else, return False.
 |-}
 
 probablyCommutative :: RandomGen g => g -> (Int -> Int -> Int) -> Bool
-probablyCommutative g f = and [f x y == f y x | (x, y) <- randoms g]
+probablyCommutative g f = and [f x y == f y x | (x, y) <- take 100 $ randoms g]
 
 {-|
 Exercise: Create a 'fake quine' (see
@@ -37,7 +37,7 @@ fakeQuine :: IO ()
 fakeQuine = do
   lines <- split_at '\n' <$> readFile "/home/lukas/workspace/personal/BeginnerTrackExercises/Ch09/Exercises.hs"
   let tail = dropWhile (not . starts_with "fakeQuine") lines
-  putStrLn $ foldr (\x xs -> xs ++ "\n" ++ x) "" tail
+  putStrLn $ foldr (\x xs -> x ++ "\n" ++ xs) "" tail
  where
    split_at x s = case dropWhile (==x) s of
         "" -> []
