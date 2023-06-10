@@ -11,7 +11,7 @@ library
 
 executable run
     main-is: Run.hs
-    build-depends: base, Ch09
+    build-depends: base, random, Ch09
 
 test-suite tests
     main-is: Tests.hs
