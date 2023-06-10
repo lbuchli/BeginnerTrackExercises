@@ -2,6 +2,7 @@
 
 import Test.Hspec
 import Test.QuickCheck
+import Text.Show.Functions
 
 import Exercises
 
@@ -12,7 +13,7 @@ main = hspec $ do
       \(xs :: [()]) -> myLength xs == length xs
   describe "myFilter" $ do
     it "behaves like filter" $ property $
-      \(xs :: [Int]) -> and [myFilter p xs == filter p xs | p <- intPredicates]
+      \p (xs :: [Int]) -> myFilter p xs == filter p xs
   describe "mapIf" $ do
     it "can be used to make all numbers even" $ property $
       \(xs :: [Int]) -> all even $ mapIf odd (*2) xs
@@ -22,5 +23,3 @@ main = hspec $ do
     it "turns [1,2,3] into [1,1,2,2,3,3]" $ stretch [1,2,3] `shouldBe` [1,1,2,2,3,3]
     it "doubles the length" $ property $
       \(xs :: [()]) -> Prelude.length (stretch xs) == 2 * Prelude.length xs
-
-intPredicates = [even, odd, (>0), (<5)]
