@@ -7,9 +7,9 @@ import Exercises
 
 main :: IO ()
 main = hspec $ do
-  describe "length" $ do
-    it "behaves like Prelude.length" $ property $
-      \(xs :: [()]) -> Exercises.length xs == Prelude.length xs
+  describe "myLength" $ do
+    it "behaves like length" $ property $
+      \(xs :: [()]) -> myLength xs == length xs
   describe "myFilter" $ do
     it "behaves like filter" $ property $
       \(xs :: [Int]) -> and [myFilter p xs == filter p xs | p <- intPredicates]
