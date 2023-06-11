@@ -1,0 +1,16 @@
+name:       Ch10
+version:    0.0.1
+cabal-version: >= 1.10
+build-type: Simple
+
+library
+    exposed-modules:
+        Exercises
+    build-depends: base
+    default-language: Haskell2010
+
+Test-Suite tests
+    main-is: Tests.hs
+    type: exitcode-stdio-1.0
+    build-depends: base, hspec, QuickCheck, Ch10
+    default-language: Haskell2010
